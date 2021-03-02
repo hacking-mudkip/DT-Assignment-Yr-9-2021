@@ -1,0 +1,53 @@
+@charset "utf-8";
+#header {
+    background-color: rgb(255, 0, 0);
+    height: 90px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right:0;
+    left:0;
+    border-top: 25px;
+    border-left: 25px;
+}
+#title {
+    color: white;
+    font-family: cursive;
+    float: top;
+    text-align: center;
+    overflow-y: auto;
+}
+#logo {
+    float: left;
+}
+#cart {
+    float: right;
+}
+body {
+    background: white;
+    overflow-x: auto;
+    overflow-y: scroll;
+    height: 100%;
+}
+#content {
+    margin-top: 0;
+    columns: 4 200px;
+    column-gap: 0px;
+    float: middle;
+    overflow: auto;
+}
+.item {
+    border: black solid 1px;
+    float: center;
+    padding: 0px 0px 0px 10%;
+}
+.item img {
+    width: 80%;
+    padding: inherit;
+}
+.item h4 {
+    padding: 0px 10% 0px 0px;
+}
+column {
+    overflow: auto;
+}
