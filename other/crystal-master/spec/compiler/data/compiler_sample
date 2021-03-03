@@ -1,0 +1,15 @@
+class Foo
+  def self.foo
+    print "He"
+  end
+end
+
+
+class FOO
+  def self.foo
+    print "llo!"
+  end
+end
+
+Foo.foo
+FOO.foo
