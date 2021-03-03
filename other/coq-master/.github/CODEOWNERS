@@ -1,0 +1,263 @@
+# This file associates maintainer teams to each component.
+# See CONTRIBUTING.md
+
+########## Contributing process ##########
+
+/.github/                   @coq/contributing-process-maintainers
+
+/CONTRIBUTING.md            @coq/contributing-process-maintainers
+
+########## Build system ##########
+
+/Makefile*                      @coq/legacy-build-maintainers
+/dev/tools/make_git_revision.sh @coq/legacy-build-maintainers
+
+/configure*        @coq/legacy-build-maintainers @coq/build-maintainers
+
+/META.coq.in       @coq/legacy-build-maintainers
+
+########## CI infrastructure ##########
+
+/dev/ci/             @coq/ci-maintainers
+/.travis.yml         @coq/ci-maintainers
+/.gitlab-ci.yml      @coq/ci-maintainers
+/.github/workflows   @coq/ci-maintainers
+/azure-pipelines.yml @coq/ci-maintainers
+/Makefile.ci         @coq/ci-maintainers
+
+/dev/ci/nix          @coq/nix-maintainers
+*.nix                @coq/nix-maintainers
+
+/dev/ci/user-overlays/*.sh @ghost
+# Trick to avoid getting review requests
+# each time someone adds an overlay
+
+/dev/bench/            @coq/bench-maintainers
+
+########## Documentation ##########
+
+/README.md             @coq/doc-maintainers
+/INSTALL.md            @coq/doc-maintainers
+
+/CODE_OF_CONDUCT.md    @coq/code-of-conduct-team
+
+/doc/                  @coq/doc-maintainers
+/Makefile.doc          @coq/doc-maintainers
+
+/dev/doc/              @coq/doc-maintainers
+
+/doc/changelog/*/*.rst @ghost
+/dev/doc/changes.md    @ghost
+# Trick to avoid getting review requests
+# each time someone modifies the changelog
+
+/dev/doc/build-system*.txt    @coq/legacy-build-maintainers
+/dev/doc/build-system.dune.md @coq/build-maintainers
+/dev/doc/critical-bugs        @coq/kernel-maintainers
+/dev/doc/econstr.md           @coq/engine-maintainers
+/dev/doc/proof-engine.md      @coq/engine-maintainers
+/dev/doc/release-process.md   @coq/contributing-process-maintainers
+/dev/doc/shield-icon.png      @coq/contributing-process-maintainers
+/dev/doc/SProp.md             @coq/universes-maintainers
+/dev/doc/style.txt            @coq/contributing-process-maintainers
+/dev/doc/unification.txt      @coq/pretyper-maintainers
+/dev/doc/universes.md         @coq/universes-maintainers
+/dev/doc/xml-protocol         @coq/stm-maintainers
+
+/man/                  @coq/doc-maintainers
+
+/doc/plugin_tutorial/  @coq/plugin-tutorial-maintainers
+
+########## Coqchk ##########
+
+/checker/              @coq/kernel-maintainers
+/test-suite/coqchk/    @coq/kernel-maintainers
+
+########## Coq lib ##########
+
+/clib/                       @coq/lib-maintainers
+/test-suite/unit-tests/clib/ @coq/lib-maintainers
+/lib/                        @coq/lib-maintainers
+
+########## Proof engine ##########
+
+/engine/          @coq/engine-maintainers
+
+/engine/univ*     @coq/universes-maintainers
+/engine/uState.*  @coq/universes-maintainers
+
+########## CoqIDE ##########
+
+/ide/             @coq/coqide-maintainers
+/ide/protocol/    @coq/stm-maintainers
+/test-suite/ide/  @coq/stm-maintainers
+
+########## Desugaring ##########
+
+/interp/          @coq/extensible-syntax-maintainers
+
+########## Kernel ##########
+
+/kernel/          @coq/kernel-maintainers
+
+/kernel/byterun/  @coq/vm-native-maintainers
+/kernel/native*   @coq/vm-native-maintainers
+/kernel/vm*       @coq/vm-native-maintainers
+/kernel/vconv.*   @coq/vm-native-maintainers
+/kernel/genOpcodefiles.* @coq/vm-native-maintainers
+
+/kernel/sorts.*   @coq/universes-maintainers
+/kernel/uGraph.*  @coq/universes-maintainers
+/kernel/univ.*    @coq/universes-maintainers
+
+########## Library ##########
+
+/library/         @coq/library-maintainers
+
+########## Parser ##########
+
+/coqpp/           @coq/parsing-maintainers
+/gramlib/         @coq/parsing-maintainers
+/parsing/         @coq/parsing-maintainers
+
+########## Standard library and plugins ##########
+
+/theories/         @coq/stdlib-maintainers
+
+/theories/Classes/ @coq/typeclasses-maintainers
+
+/theories/Reals/   @coq/reals-library-maintainers
+
+/theories/Compat/  @coq/compat-maintainers
+
+/plugins/btauto/       @coq/btauto-maintainers
+/theories/btauto/      @coq/btauto-maintainers
+
+/plugins/cc/           @coq/cc-maintainers
+/theories/cc/          @coq/cc-maintainers
+
+/plugins/derive/       @coq/derive-maintainers
+/theories/derive/      @coq/derive-maintainers
+
+/plugins/extraction/   @coq/extraction-maintainers
+/theories/extraction/  @coq/extraction-maintainers
+
+/plugins/firstorder/   @coq/firstorder-maintainers
+/theories/firstorder/  @coq/firstorder-maintainers
+
+/plugins/funind/       @coq/funind-maintainers
+/theories/funind/      @coq/funind-maintainers
+
+/plugins/ltac/         @coq/ltac-maintainers
+/theories/ltac/        @coq/ltac-maintainers
+
+/plugins/micromega/    @coq/micromega-maintainers
+/theories/micromega/   @coq/micromega-maintainers
+/test-suite/micromega/ @coq/micromega-maintainers
+
+/plugins/nsatz/        @coq/nsatz-maintainers
+/theories/nsatz/       @coq/nsatz-maintainers
+
+/plugins/ring/  @coq/ring-maintainers
+/theories/setoid_ring/ @coq/ring-maintainers
+
+/plugins/ssrmatching/  @coq/ssreflect-maintainers
+/theories/ssrmatching/ @coq/ssreflect-maintainers
+
+/plugins/ssr/          @coq/ssreflect-maintainers
+/theories/ssr/         @coq/ssreflect-maintainers
+
+/test-suite/ssr/       @coq/ssreflect-maintainers
+
+/plugins/syntax/       @coq/parsing-maintainers
+
+/plugins/rtauto/       @coq/rtauto-maintainers
+/theories/rtauto/      @coq/rtauto-maintainers
+
+/user-contrib/Ltac2    @coq/ltac2-maintainers
+
+########## Pretyper ##########
+
+/pretyping/             @coq/pretyper-maintainers
+
+/pretyping/vnorm.*      @coq/vm-native-maintainers
+/pretyping/nativenorm.* @coq/vm-native-maintainers
+
+########## Pretty printer ##########
+
+/printing/        @coq/extensible-syntax-maintainers
+
+########## Proof infrastructure ##########
+
+/proofs/          @coq/engine-maintainers
+
+########## STM ##########
+
+/stm/                    @coq/stm-maintainers
+/test-suite/interactive/ @coq/stm-maintainers
+/test-suite/stm/         @coq/stm-maintainers
+/test-suite/vio/         @coq/stm-maintainers
+
+########## Tactics ##########
+
+/tactics/         @coq/tactics-maintainers
+
+/tactics/class_tactics.* @coq/typeclasses-maintainers
+/test-suite/typeclasses/ @coq/typeclasses-maintainers
+
+########## Tools ##########
+
+/tools/coqdoc/            @coq/coqdoc-maintainers
+/test-suite/coqdoc/       @coq/coqdoc-maintainers
+/tools/coqwc*             @coq/coqdoc-maintainers
+/test-suite/coqwc/        @coq/coqdoc-maintainers
+
+/tools/coq_makefile*      @coq/coq-makefile-maintainers
+/tools/CoqMakefile*       @coq/coq-makefile-maintainers
+/test-suite/coq-makefile/ @coq/coq-makefile-maintainers
+
+/tools/TimeFileMaker.py   @coq/coq-makefile-maintainers
+/tools/make-*-tim*.py     @coq/coq-makefile-maintainers
+
+/tools/coqdep*  @coq/legacy-build-maintainers @coq/build-maintainers
+
+/tools/coq_tex*        @silene
+# Secondary maintainer @gares
+
+########## Toplevel ##########
+
+/toplevel/   @coq/toplevel-maintainers
+/topbin/     @coq/toplevel-maintainers
+/sysinit/    @coq/toplevel-maintainers
+
+########## Vernacular ##########
+
+/vernac/              @coq/vernac-maintainers
+
+/vernac/metasyntax.*  @coq/parsing-maintainers
+
+/vernac/classes.*     @coq/typeclasses-maintainers
+
+########## Test suite ##########
+
+/test-suite/Makefile        @coq/test-suite-maintainers
+/test-suite/README.md       @coq/test-suite-maintainers
+/test-suite/report.sh       @coq/test-suite-maintainers
+/test-suite/unit-tests/src/ @coq/test-suite-maintainers
+
+/test-suite/complexity/ @herbelin
+
+/test-suite/success/Compat*.v @coq/compat-maintainers
+
+########## Developer tools ##########
+
+/dev/tools/ @coq/dev-tools-maintainers
+
+/dev/tools/update-compat.py      @coq/compat-maintainers
+/test-suite/tools/update-compat/ @coq/compat-maintainers
+
+########## Dune  ##########
+
+/.ocamlinit  @coq/build-maintainers
+*dune*       @coq/build-maintainers
+*.opam       @coq/build-maintainers

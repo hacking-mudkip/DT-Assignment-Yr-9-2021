@@ -1,0 +1,5 @@
+{ bignums }:
+
+{
+  coqBuildInputs = [ bignums ];
+}

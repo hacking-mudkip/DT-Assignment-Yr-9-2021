@@ -1,0 +1,6 @@
+source core.dbg
+
+load_printer ltac_plugin.cmo
+load_printer top_printers.cmo
+
+source top_printers.dbg

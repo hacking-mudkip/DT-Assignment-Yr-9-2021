@@ -1,0 +1,5 @@
+{ ocamlPackages }:
+
+{
+  buildInputs = [ ocamlPackages.ocaml ];
+}

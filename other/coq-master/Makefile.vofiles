@@ -1,0 +1,63 @@
+##########################################################################
+##         #   The Coq Proof Assistant / The Coq Development Team       ##
+##  v      #         Copyright INRIA, CNRS and contributors             ##
+## <O___,, # (see version control and CREDITS file for authors & dates) ##
+##   \VV/  ###############################################################
+##    //   #    This file is distributed under the terms of the         ##
+##         #     GNU Lesser General Public License Version 2.1          ##
+##         #     (see LICENSE file for the text of the license)         ##
+##########################################################################
+
+# This file calls [find] and as such is not suitable for inclusion in
+# the test suite Makefile, unlike Makefile.common.
+
+ifdef QUICK
+VO=vio
+else
+VO=vo
+endif
+
+###########################################################################
+# vo files
+###########################################################################
+
+THEORIESVO := $(patsubst %.v,%.$(VO),$(shell find theories -type f -name "*.v"))
+CONTRIBVO := $(patsubst %.v,%.$(VO),$(shell find $(addprefix user-contrib/, $(USERCONTRIBDIRS)) -type f -name "*.v"))
+ALLVO := $(THEORIESVO) $(CONTRIBVO)
+VFILES := $(ALLVO:.$(VO)=.v)
+
+## More specific targets
+
+THEORIESLIGHTVO:= \
+ $(filter theories/Init/% theories/Logic/% theories/Unicode/% theories/Arith/%, $(THEORIESVO))
+
+# convert a (stdlib) filename into a module name:
+# remove .vo, replace stdlib by Coq, and replace slashes by dots
+vo_to_mod = $(subst /,.,$(patsubst user-contrib/%,%,$(patsubst theories/%,Coq.%,$(1:.vo=))))
+
+ALLMODS:=$(call vo_to_mod,$(ALLVO:.$(VO)=.vo))
+
+# Converting a stdlib filename into native compiler filenames
+# Used for install targets
+vo_to_cm = $(foreach vo,$(1),$(dir $(vo)).coq-native/$(subst /,_,$(patsubst user-contrib/%,N%, $(patsubst theories/%,NCoq_%,$(vo:.$(VO)=.cm*)))))
+vo_to_obj = $(foreach vo,$(1),$(dir $(vo)).coq-native/$(subst /,_,$(patsubst user-contrib/%,N%, $(patsubst theories/%,NCoq_%,$(vo:.$(VO)=.o)))))
+
+ifdef QUICK
+GLOBFILES:=
+else
+GLOBFILES:=$(ALLVO:.$(VO)=.glob)
+endif
+
+ifdef NATIVECOMPUTE
+NATIVEFILES := $(call vo_to_cm,$(ALLVO))
+ifeq ($(BEST),opt)
+NATIVEFILES += $(call vo_to_obj,$(ALLVO))
+endif
+else
+NATIVEFILES :=
+endif
+
+# For emacs:
+# Local Variables:
+# mode: makefile-gmake
+# End:

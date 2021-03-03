@@ -1,0 +1,4 @@
+{ mathcomp }:
+{
+  coqBuildInputs = [ mathcomp ];
+}
