@@ -1,4 +1,0 @@
---main Main
--p source
---macro addMetadata('@:build(Build.build())', 'Main')
--neko run.n

@@ -1,3 +1,0 @@
-compile-each.hxml
-unit.TestMain
--js bin/unit.js

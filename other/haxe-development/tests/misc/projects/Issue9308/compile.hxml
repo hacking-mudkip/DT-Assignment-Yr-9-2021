@@ -1,4 +1,0 @@
--main Main
--js bin/test.js
--D js-es=6
---cmd node bin/test.js

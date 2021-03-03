@@ -1,3 +1,0 @@
-build.hxml
---next
--cmd node test.js

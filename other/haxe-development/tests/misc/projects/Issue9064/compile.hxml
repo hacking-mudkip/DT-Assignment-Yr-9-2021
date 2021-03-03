@@ -1,4 +1,0 @@
--main Main
--D analyzer-optimize
---macro Check.init()
--js bin/test.js

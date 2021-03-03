@@ -1,5 +1,0 @@
--p src
--js bin/RunSauceLabs.js
---main RunSauceLabs
--lib hxnodejs
---debug

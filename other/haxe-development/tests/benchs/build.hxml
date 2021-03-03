@@ -1,6 +1,0 @@
--cp src
--main Main
--D test=Calls
--D analyzer-optimize
--D analyzer-no-purity-inference
--D dump=pretty

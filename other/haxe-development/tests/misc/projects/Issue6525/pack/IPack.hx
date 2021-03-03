@@ -1,3 +1,0 @@
-package pack;
-
-interface IPack {}

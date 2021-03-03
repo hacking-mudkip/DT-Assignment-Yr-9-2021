@@ -1,3 +1,0 @@
-test.hxml
--js bin/test-es6.js
--D js-es=6

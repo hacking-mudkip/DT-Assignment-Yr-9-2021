@@ -1,3 +1,0 @@
-Main.hx:11: characters 9-31 : error: SomeNode should be Node
-Main.hx:11: characters 9-31 : ... have: { parent: SomeNode }
-Main.hx:11: characters 9-31 : ... want: { parent: Node }

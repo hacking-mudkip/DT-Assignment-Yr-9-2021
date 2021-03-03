@@ -1,1 +1,0 @@
-typedef Foo = String & {}

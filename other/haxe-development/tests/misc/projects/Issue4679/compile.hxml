@@ -1,3 +1,0 @@
--m Main
--neko test.n
---cmd "neko test.n"

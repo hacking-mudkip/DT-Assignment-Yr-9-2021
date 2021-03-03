@@ -1,3 +1,0 @@
--main Main
--lua bin/test.lua
---cmd lua bin/test.lua

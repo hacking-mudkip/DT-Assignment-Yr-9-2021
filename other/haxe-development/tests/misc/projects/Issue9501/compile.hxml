@@ -1,9 +1,0 @@
-Externs
--js bin/externs.js
-
---next
-
--main Main
--js bin/test.js
-
---cmd node bin/test.js
