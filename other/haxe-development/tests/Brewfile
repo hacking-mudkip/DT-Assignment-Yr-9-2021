@@ -1,0 +1,7 @@
+brew "ocaml"
+brew "camlp5"
+brew "opam"
+brew "ninja"
+brew "awscli"
+brew "cmake"
+brew "pkg-config"
