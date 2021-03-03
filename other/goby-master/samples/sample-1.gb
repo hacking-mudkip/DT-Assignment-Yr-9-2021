@@ -1,0 +1,20 @@
+class Foo
+  def set(x)
+    @x = x
+  end
+  def get
+    @x
+  end
+end
+
+class Bar < Foo; end
+class Baz < Foo; end
+
+bar = Bar.new
+baz = Baz.new
+foo = Foo.new
+bar.set(10)
+baz.set(1)
+foo.set(5)
+
+puts(bar.get + baz.get + foo.get) #=> 16

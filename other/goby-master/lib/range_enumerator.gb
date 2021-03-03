@@ -1,0 +1,65 @@
+# Minimail implementation of a range enumerator.
+#
+# Assumes that the Enumerator interface has two methods: #has_next? and #next.
+#
+# It is also implicitly that a range never has a nil value.
+#
+class RangeEnumerator
+  def initialize(range)
+    @range = range
+    @current_value = nil
+
+    if @range.first < @range.last
+      @delta = 1
+    else
+      @delta = -1
+    end
+  end
+
+  # Returns true if there is another element is available.
+  #
+  def has_next?
+    if @current_value.nil?
+      return true
+    end
+
+    if @range.last < @range.first
+      return @current_value > @range.last
+    end
+
+    @current_value < @range.last
+  end
+
+  # Returns the next element, and advances the internal position.
+  #
+  # Raises an error if there are no elements available.
+  #
+  def next
+    if !has_next?
+      raise StopIteration, "No more elements!"
+    end
+
+    if @current_value.nil?
+      @current_value = @range.first
+    else
+      @current_value += @delta
+    end
+
+    @current_value
+  end
+
+  def each
+    while has_next? do
+      next_value = self.next
+      yield next_value
+    end
+  end
+
+  def map
+    a = []
+    self.each do |value|
+      a.push(yield(value))
+    end
+    a
+  end
+end

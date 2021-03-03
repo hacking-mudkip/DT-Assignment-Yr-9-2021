@@ -1,0 +1,48 @@
+
+language: go
+
+matrix:
+  include:
+    - go: 1.14
+      dist: xenial
+    - go: 1.15
+      dist: xenial
+
+services:
+  - postgresql
+
+go_import_path: github.com/goby-lang/goby
+
+before_install:
+  - sudo apt-get install apache2-utils
+
+before_script:
+  - psql -c 'create database goby_test;' -U postgres
+
+script:
+  - ./travis.sh
+
+env:
+  - "GOBY_ROOT=$HOME/gopath/src/github.com/goby-lang/goby"
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+notifications:
+  slack:
+    rooms:
+      - goby-lang:Ler5Uge2Vlx3O8Yt2OFcKg5W#general
+    on_success: always
+    on_failure: always
+    on_start: never
+  webhooks:
+    urls:
+      - https://webhooks.gitter.im/e/149378fb1b44bbaf21f0
+    on_success: change
+    on_failure: always
+    on_start: never
+  email:
+    recipients:
+      - stan001212@gmail.com
+    on_failure: change
+    on_success: never
