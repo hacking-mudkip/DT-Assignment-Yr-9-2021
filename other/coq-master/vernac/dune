@@ -1,8 +1,0 @@
-(library
- (name vernac)
- (synopsis "Coq's Vernacular Language")
- (public_name coq.vernac)
- (wrapped false)
- (libraries tactics parsing))
-
-(coq.pp (modules g_proofs g_vernac))

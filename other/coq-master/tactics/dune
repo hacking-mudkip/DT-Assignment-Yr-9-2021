@@ -1,6 +1,0 @@
-(library
- (name tactics)
- (synopsis "Coq's Core Tactics [ML implementation]")
- (public_name coq.tactics)
- (wrapped false)
- (libraries printing))

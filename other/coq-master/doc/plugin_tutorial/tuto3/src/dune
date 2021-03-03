@@ -1,7 +1,0 @@
-(library
- (name tuto3_plugin)
- (public_name coq.plugins.tutorial.p3)
- (flags :standard -warn-error -3)
- (libraries coq.plugins.ltac))
-
-(coq.pp (modules g_tuto3))

@@ -1,7 +1,0 @@
-(library
- (name protocol)
- (public_name coqide-server.protocol)
- (wrapped false)
- (libraries coq.lib))
-
-(ocamllex xml_lexer)
