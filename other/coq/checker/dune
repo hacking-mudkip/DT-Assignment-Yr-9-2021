@@ -1,0 +1,28 @@
+; Careful with bug https://github.com/ocaml/odoc/issues/148
+;
+; If we don't pack checker we will have a problem here due to
+; duplicate module names in the whole build.
+(library
+ (name coq_checklib)
+ (synopsis "Coq's Standalone Proof Checker")
+ (modules :standard \ coqchk votour)
+ (wrapped true)
+ (libraries coq.kernel))
+
+(executable
+ (name coqchk)
+ (public_name coqchk)
+ (modes exe byte)
+ (package coq)
+ (modules coqchk)
+ (flags :standard -open Coq_checklib)
+ (libraries coq_checklib))
+
+(executable
+ (name votour)
+ (public_name votour)
+ (package coq)
+ (modules votour)
+ (flags :standard -open Coq_checklib)
+ (libraries coq_checklib))
+

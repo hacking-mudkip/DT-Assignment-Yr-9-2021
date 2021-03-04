@@ -1,0 +1,52 @@
+(rule
+ (targets coqtop-prelude)
+ (deps
+  %{bin:coqtop}
+  %{project_root}/theories/Init/Prelude.vo)
+ (action
+  (with-stdout-to coqtop-prelude
+   (progn
+    (echo "#!/usr/bin/env bash\n")
+    (bash "echo '$(dirname $0)/%{bin:coqtop} -coqlib $(dirname $0)/%{project_root}' \\$@")
+    (run chmod +x %{targets})))))
+
+(rule
+ (targets coqc-prelude)
+ (deps
+  %{bin:coqc}
+  %{project_root}/theories/Init/Prelude.vo)
+ (action
+  (with-stdout-to coqc-prelude
+   (progn
+    (echo "#!/usr/bin/env bash\n")
+    (bash "echo '$(dirname $0)/%{bin:coqc} -coqlib $(dirname $0)/%{project_root}' \\$@")
+    (run chmod +x %{targets})))))
+
+(rule
+ (targets coqbyte-prelude)
+ (deps
+  %{bin:coqtop.byte}
+  %{lib:coq.kernel:../../stublibs/dllbyterun_stubs.so}
+  %{project_root}/theories/Init/Prelude.vo)
+ (action
+  (with-stdout-to %{targets}
+   (progn
+    (echo "#!/usr/bin/env bash\n")
+    (bash "echo '$(dirname $0)/%{bin:coqtop.byte} -coqlib $(dirname $0)/%{project_root}' \\$@")
+    (run chmod +x %{targets})))))
+
+(rule
+ (targets coqide-prelude)
+ (deps
+  %{bin:coqqueryworker.opt}
+  %{bin:coqtacticworker.opt}
+  %{bin:coqproofworker.opt}
+  %{project_root}/theories/Init/Prelude.vo
+  %{project_root}/coqide-server.install
+  %{project_root}/coqide.install)
+ (action
+  (with-stdout-to coqide-prelude
+   (progn
+    (echo "#!/usr/bin/env bash\n")
+    (bash "echo '$(dirname $0)/%{bin:coqide} -coqlib $(dirname $0)/%{project_root}' \\$@")
+    (run chmod +x %{targets})))))
