@@ -1,3 +1,0 @@
-puts("123".class.name) #=> String
-puts(123.class.name) #=> Integer
-puts(true.class.name) #=> Boolean

@@ -1,9 +1,0 @@
-require_relative("bar")
-
-class Foo
-  def self.bar(x)
-    Bar.foo do |ten|
-      x * ten
-    end
-  end
-end

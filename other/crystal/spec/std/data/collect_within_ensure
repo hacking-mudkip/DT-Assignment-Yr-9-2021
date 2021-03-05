@@ -1,5 +1,0 @@
-begin
-  raise "Oh no!"
-ensure
-  GC.collect
-end
