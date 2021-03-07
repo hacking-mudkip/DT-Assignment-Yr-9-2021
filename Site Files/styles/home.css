@@ -65,6 +65,11 @@ column {
 #info p {
 	padding: 0px 30% 0px 10%;
 }
+#add {
+	padding: 5% 0px 5% 45%;
+	border: solid black 1px;
+	border-radius: 5px;
+}
 a {
 	color: black;
 }
