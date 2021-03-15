@@ -3,7 +3,7 @@
 Available via:
 * [Raw Code](https://github.com/TurnipGuy30/DT-Assignment-Yr-9-2021/tree/main/Site%20Files)
 * [GitHub Pages](https://turnipguy30.github.io/DT-Assignment-Yr-9-2021/Site%20Files/index.html)
-* [GitHub Desktop](https://desktop.github.com/) Clone via this URL:
+* [GitHub Desktop](https://desktop.github.com/) Clone (install and open this URL:
 ```
 x-github-client://openRepo/https://github.com/TurnipGuy30/DT-Assignment-Yr-9-2021
 ```
