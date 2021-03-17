@@ -49,6 +49,9 @@ body {
     padding: 0px 10% 0px 0px;
 	font: cursive;
 }
+.item:hover {
+	cursor: pointer;
+}
 column {
     overflow: auto;
 }
